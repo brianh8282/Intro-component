@@ -1,0 +1,200 @@
+@font-face {
+    font-family: Poppins;
+    src: url(https://fonts.google.com/specimen/Poppins);
+  }
+  
+  /* Variables here */
+  :root {
+    --Red: hsl(0, 100%, 74%) ;
+    --Green: hsl(154, 59%, 51%) ;
+    --Green2: hsl(154, 59%, 45%) ;
+    --Blue: hsl(248, 32%, 49%);
+    --Dark-Blue: hsla(249, 10%, 26%, 0.3);
+    --Grayish-Blue: hsla(246, 25%, 77%, 0.8);
+
+    --font-family: "Poppins";
+    --font-Size: 16px;
+    --weight400: 400;
+    --weight500: 500;
+    --weight600: 600;
+    --weight700: 700;
+
+    --box-shadow: 0 0.5rem var(--Dark-Blue);
+  }
+  
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default margin */
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+  }
+  
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  main {
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images/bg-intro-desktop.png);
+    background-color: var(--Red);
+    font-family: var(--font-family);
+    font-size: var(--font-Size);
+    font-weight: var(--weight500);
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  section.left {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    flex:1;
+  }
+
+  section.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex:1;
+  }
+
+  .left h1{
+    font-size: 2.5rem;
+    font-weight: var(--weight700);
+    color: white;
+  }
+
+  .left p {
+    color: hsla(0, 0%, 100%, 0.8);
+    font-weight: var(--weight600);
+    max-width: 30rem;
+    
+  }
+
+  .right .free {
+    background-color: var(--Blue);
+    color: white;
+    padding: 1rem 5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    flex:1;
+  }
+
+  .free span {
+    color: var(--Grayish-Blue);
+    font-weight: var(--weight400);
+
+  }
+
+  .right form {
+    display:flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    flex:1;
+  }
+
+  form input{
+    border: solid black 0.1rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: var(--weight600);
+    flex:1;
+    margin-bottom: 0.5rem;
+  }
+
+  form input[type="submit"] {
+    border: solid var(--Green2) 0.1rem;
+    box-shadow: 0 0.15rem var(--Green2);
+    background-color: var(--Green);
+    color: white;
+    text-transform: uppercase;
+  }
+
+  form .agreement {
+    color: var(--Grayish-Blue);
+    font-size: 0.8rem;
+    font-weight: var(--weight600);
+    flex:1;
+  }
+
+  form .agreement span{
+    color: var(--Red);
+  }
+
+  form .error {
+    color: var(--Red);
+    font-size: 0.7rem;
+    font-weight: var(--weight600);
+    margin-bottom: 1rem;
+    text-align: end;
+    visibility: hidden;
+    position: relative;
+  }
+
+  form .error img {
+    position: absolute;
+    top: -3rem;
+    right: 1.5rem;
+  }
+
+  .highlight {
+    border: solid var(--Red) 0.1rem;
+  }
+
+  input::placeholder {
+    color: #999;
+  }
+
+  .highlight#email::placeholder {
+    color: var(--Red);
+  }
+
+
+  @media screen and (max-width: 600px) {
+    :root {
+        font-size: 10px;
+    }
+    .container {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    section.left {
+        align-items: center;
+        text-align: center;
+    }
+
+    form .error img {
+      top: -3.75rem;
+    }
+  }

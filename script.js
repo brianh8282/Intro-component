@@ -10,6 +10,7 @@ function check(event) {
     const lastname = lastNameInput.value.trim();
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
+    var emailReg = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gim;
 
     if (firstname === '') {
         firstNameInput.classList.add('highlight');
@@ -31,7 +32,7 @@ function check(event) {
         document.getElementById('lastNameError').style.visibility = 'hidden';
     }
 
-    if (email === '') {
+    if (emailReg.test(email) == false) {
         emailInput.classList.add('highlight', '#email::placeholder');
         emailInput.placeholder = 'email@example/com';
         document.getElementById('emailError').style.visibility = 'visible';
